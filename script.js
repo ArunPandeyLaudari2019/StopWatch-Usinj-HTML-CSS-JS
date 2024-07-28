@@ -17,15 +17,12 @@
         function reset() {
             timer = false;
 
-            hrs = 0;
-            min = 0;
-            sec = 0;
-            count = 0;
+           
 
-            document.getElementById('hrs').innerHTML = hrs;
-            document.getElementById('min').innerHTML = min;
-            document.getElementById('sec').innerHTML = sec;
-            document.getElementById('count').innerHTML = count;
+            document.getElementById('hrs').innerHTML = "00";
+            document.getElementById('min').innerHTML = "00";
+            document.getElementById('sec').innerHTML = "00";
+            document.getElementById('count').innerHTML = "00";
         }
 
         function stopwatch() {
@@ -49,9 +46,27 @@
                     sec = 0;
                 }
 
-                document.getElementById('hrs').innerHTML = hrs;
-                document.getElementById('min').innerHTML = min;
-                document.getElementById('sec').innerHTML = sec;
+                let shrs=hrs;
+                let smin=min;
+                let ssec=sec;
+
+                if(shrs <10){
+                    shrs="0"+shrs;
+                }
+
+                if(smin <10){
+                    smin="0"+smin;
+                }
+                if(ssec <10){
+                    ssec="0"+ssec;
+                }
+                                
+                
+
+
+                document.getElementById('hrs').innerHTML = shrs;
+                document.getElementById('min').innerHTML = smin;
+                document.getElementById('sec').innerHTML = ssec;
                 document.getElementById('count').innerHTML = count;
 
                 setTimeout('stopwatch()', 10);
